@@ -1,0 +1,17 @@
+/*
+THEME NAME: Darren H
+THEME URI: http://www.darrenhelgesen.com
+DESCRIPTION: A child theme for an architect
+VERSION: 1.0
+AUTHOR: Daniel Wiener based on work by Dalton Rooney http://daltonrooney.com
+AUTHOR URI: http://danielwiener.com 
+TEMPLATE: portfolio
+
+TAGS: white, left sidebar, minimalist, sandbox
+*/
+
+/* @group CSS Reset */
+
+/* v1.0 | 20080212 */ 
+
+@import url('../portfolio/style.css');
