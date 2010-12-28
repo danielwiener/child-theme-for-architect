@@ -19,15 +19,48 @@
 	 */
 ?>
 	
-			<?php $args = array(
-					 'menu'            => 'Projects Menu',
-					'container_class' => 'side_menu', 
-					'menu_id' => 'menu_for_projects',
-					'menu_class' => 'projects_menu'
-					  // 'container'       => 'div'
-					);
-			wp_nav_menu($args); ?>
-			</div><!-- #primary .widget-area -->
+	   <?php
+	   if ($post->post_parent == 69):
+				$this_id = $post->ID;
+				$parent_title = $post->post_title;
+				$this_content  = $post->post_content;
+				?>
+				<h3 class="widget-title"><?php echo $parent_title; ?></h3> 
+			<?php else:
+				$this_id = $post->post_parent;
+				$parent_title = get_the_title($post->post_parent);
+				$child_title = $post->post_title;
+				$parent_post = get_post($this_id);
+				$this_content  = $parent_post->post_content;
+				$parent_url = get_page_uri($this_id);     
+ 				?>
+	            <h3 class="widget-title"><a href="<?php echo $parent_url; ?>"><?php echo $parent_title; ?></a></h3>
+                 <h4>(<?php echo $child_title; ?>)</h4>
+		        <?php 
+	   
+		
+		endif; ?>
+	<p><?php echo $this_content; ?></p>
+	  <ul>
+	<?php
+	if ($post->post_parent == 69): 
+	$args = array(
+				'post_type' => 'page', 
+				'post_status' => 'publish',
+				'post_parent' => $this_id,  
+				);
+			global $post;
+			$program_pages = get_posts($args);
+			foreach($program_pages as $post) :
+			   setup_postdata($post); 
+			 ?>
+			    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+			 <?php endforeach; ?>
+				</ul>
+	          <?php else: ?>
+		<p><a href="<?php echo $parent_url; ?>">Return to completed project.</a>
+			   <?php endif; ?>
+	   </div><!-- #primary .widget-area -->
 
 <?php
 	// A second sidebar for widgets, just because.
