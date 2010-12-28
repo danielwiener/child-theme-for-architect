@@ -77,7 +77,7 @@ DESCRIPTION: Two-column fixed layout with one sidebar right of content
 #secondary {
 	float: left; /*DW*/
 	overflow: hidden;
-	width: 120px; /*DW*/
+	width: 200px; /*DW*/
 	/*border: 1px solid #999;*/
 }
 #secondary {
@@ -355,8 +355,8 @@ a:hover {
 }
 #site-title {
 	float: left;
-/*	font-size: 30px;*/
-	/*line-height: 36px;*/
+	font-size: 30px; 
+	line-height: 36px;
 /*	height: 72px;*/
 	margin: 0 0 0px 0;
 	width: 700px;
@@ -368,8 +368,9 @@ a:hover {
 	text-decoration: none;
 	background: #FFFFFF;
 	display: block;
-	height: 70px;
-	width: 700px;
+	/*height: 70px; */
+	width: 700px; 
+	/*border: 1px solid #999;*/
 }
 
 #site-description {
@@ -488,7 +489,8 @@ div.menu li {
 #main {
 	clear: both;
 	overflow: hidden;
-	padding: 40px 0 0 0;
+	padding: 20px 0 0 0;
+   /* border: 1px solid #999;*/
 }
 #content {
 	margin-bottom: 36px;
