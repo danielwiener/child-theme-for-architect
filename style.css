@@ -78,7 +78,8 @@ DESCRIPTION: Two-column fixed layout with one sidebar right of content
 	float: left; /*DW*/
 	overflow: hidden;
 	width: 200px; /*DW*/
-	/*border: 1px solid #999;*/
+	/*border: 1px solid #999;*/ 
+	padding: 0 18px 0 0;
 }
 #secondary {
 	clear: right;
@@ -1479,7 +1480,7 @@ height: 200px;
 }
 
 #main_image img {
-	padding-top: 30px;
+	padding-top: 10px;
 }
 
 /* =pagination from Gravy by http://www.darrenhoyt.com
