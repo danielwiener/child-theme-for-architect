@@ -14,4 +14,10 @@ TAGS: white, left sidebar, minimalist, sandbox
 
 /* v1.0 | 20080212 */ 
 
-@import url('../portfolio/style.css');
+@import url('../portfolio/style.css'); 
+
+/* @group Gallery with thumbs DW override*/
+div.thumbs img{
+	width: 40px;
+	height: 40px;
+}
