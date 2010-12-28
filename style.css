@@ -1,10 +1,11 @@
 /*
-Theme Name: Margeaux Walter
-Theme URI: http://margeauxwalter.com/
-Description: Margeaux Walter theme is a child theme of 2010 customized for http://margeauxwalter.com/ by Daniel Wiener, http://www.danielwiener.com with a custom menu, header image, and background. Twenty Ten supports six widgetized areas (two in the sidebar, four in the footer) and featured images (thumbnails for gallery posts and custom header images for posts and pages). It includes stylesheets for print and the admin Visual Editor, special styles for posts in the "Asides" and "Gallery" categories, and has an optional one-column page template that removes the sidebar.
-Author: Daniel Wiener and Margeaux Walter and the WordPress team
+Theme Name: East End Architect
+Theme URI: http://darrenhelgesen.com/
+Description: The East End Architect theme is a child theme of 2010 customized for http://darrenhelgesen.com/ by Daniel Wiener, http://www.danielwiener.com with a custom menu, header image, and background. It includes additions from Dalton Rooney's Portolio theme. See http://daltonrooney.com/portfolio/
+Author: Daniel Wiener and the WordPress team
+Author URI: http://danielwiener.com
 Template: twentyten
-Version: 1.001
+Version: 0.1
 Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style
 */
 
@@ -215,7 +216,7 @@ div.menu,
 
 /* Main global 'theme' and typographic styles */
 body {
-	background: #cccccc;
+	background: #fff;
 }
 body,
 input,
@@ -365,20 +366,12 @@ a:hover {
 	color: #000;
 	font-weight: bold;
 	text-decoration: none;
-	background: #FFFFFF url(assets/mw_logo.jpg) no-repeat top left;
+	background: #FFFFFF;
 	display: block;
 	height: 70px;
 	width: 700px;
 }
 
-#site-title a span { /*:NOTE This makes link text disappear http://webaim.org/techniques/css/invisiblecontent/ DW*/
-	position:absolute;
-	left:-10000px;
-	top:auto;
-	width:1px;
-	height:1px;
-	overflow:hidden;
-}
 #site-description {
 	clear: right;
 	float: right;
