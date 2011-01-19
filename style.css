@@ -1479,8 +1479,13 @@ height: 200px;
   background: #fff url(assets/spinner.gif) no-repeat center center;
 }
 
+
+#main_image {
+ height: 550px; 
+}
 #main_image img {
-	padding-top: 10px;
+	padding-top: 10px; 
+   
 }
 
 /* =pagination from Gravy by http://www.darrenhoyt.com
