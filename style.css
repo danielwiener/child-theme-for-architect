@@ -1,4 +1,4 @@
-/*
+f/*
 Theme Name: East End Architect
 Theme URI: http://darrenhelgesen.com/
 Description: The East End Architect theme is a child theme of 2010 customized for http://darrenhelgesen.com/ by Daniel Wiener, http://www.danielwiener.com with a custom menu, header image, and background. It includes additions from Dalton Rooney's Portolio theme. See http://daltonrooney.com/portfolio/
@@ -154,7 +154,7 @@ h3#reply-title,
 .widget-title,
 .wp-caption-text,
 input[type=submit] {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: "proxima-nova-1","proxima-nova-2","helvetica",sans-serif;
 }
 pre {
 	font-family: "Courier 10 Pitch", Courier, monospace;
@@ -328,11 +328,11 @@ textarea {
 	padding: 2px;
 }
 a:link {
-	color: #999;
+	color: #000B6C;
 	text-decoration: none;
 }
 a:visited {
-	color: #999;
+	color: #000B6C;
 	text-decoration: none;
 }
 a:active,
@@ -361,11 +361,12 @@ a:hover {
 /*	height: 72px;*/
 	margin: 0 0 0px 0;
 	width: 700px;
-	
+	color: #000B6C;
+
 }
 #site-title a {
-	color: #000;
-	font-weight: bold;
+	color: #000B6C;
+	/*font-weight: bold;*/
 	text-decoration: none;
 	background: #FFFFFF;
 	display: block;
@@ -460,7 +461,7 @@ div.menu li {
 #access li:hover > a,
 #access ul ul :hover > a {
 	background: #eee;
-	color: #333;
+	color: #000B6C;
 }
 #access ul li:hover > ul {
 	display: block;
@@ -470,7 +471,7 @@ div.menu li {
 #access ul li.current-page-ancestor > a, /*DW to highlight page when child page is open*/
 #access ul li.current-menu-item > a,
 #access ul li.current-menu-parent > a {
-	color: #333;
+	color: #000B6C;
 }
 
 
@@ -480,7 +481,7 @@ div.menu li {
 * html #access ul li.current-menu-item a,
 * html #access ul li.current-menu-parent a,
 * html #access ul li a:hover {
-	color: #333;
+	color: #000B6C;
 }
 
 

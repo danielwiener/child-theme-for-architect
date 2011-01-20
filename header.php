@@ -119,7 +119,9 @@ $('#loader').addClass('loading');
 });
 	
 });
-</script>
+</script> 
+<script type="text/javascript" src="http://use.typekit.com/tps2mqd.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 
 <body <?php body_class(); ?>>
