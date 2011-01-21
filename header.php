@@ -62,26 +62,6 @@ jQuery(document).ready(function($)  {
 </script>
 <?php endif; ?>
 
-	<script type="text/javascript">
-jQuery.noConflict();
-// when the DOM is ready
-jQuery(document).ready(function($)  {
-	$('#anim_and_stills').find('.these_images').hide(); 
-	$('#anim_and_stills').find('.these_images:eq(0)').fadeIn();
-	$("#pinkies a").click(function (event) {
-		event.preventDefault();
-		var image_id = this.id;
-		// console.log(image_id);
-		var image_id_with_hash = "#" + image_id;
-		$('#anim_and_stills').find('.these_images').hide();
-		// console.log(image_id_with_hash);
-		$('#anim_and_stills').find(image_id_with_hash).fadeIn(); 
-		
-	});
-	
-});
-</script>
-
 <script type="text/javascript">
 
 jQuery.noConflict();
