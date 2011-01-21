@@ -46,7 +46,7 @@
 	 * generally use this hook to add elements to <head> such
 	 * as styles, scripts, and meta tags.
 	 */
-	wp_enqueue_script("jquery"); 
+
 	wp_head();
 ?>
 <script type="text/javascript" src="<?php bloginfo("stylesheet_directory"); ?>/js/yourScript.js"></script>

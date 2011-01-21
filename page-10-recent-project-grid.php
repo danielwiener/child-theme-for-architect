@@ -7,8 +7,8 @@ Template Name: Recent Project Image Grid
  *
  *
  * @package WordPress
- * @subpackage Margeaux
- * @since Margeaux 1.0
+ * @subpackage East End Architect
+ * @since East End Architect 1.0  
  */
 
 get_header(); ?>

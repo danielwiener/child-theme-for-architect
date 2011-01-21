@@ -10,7 +10,18 @@ remove_action('wp_head', 'wlwmanifest_link');
 remove_action('wp_head', 'feed_links_extra', 3);
 remove_action('wp_head', 'start_post_rel_link', 10, 0);
 remove_action('wp_head', 'parent_post_rel_link', 10, 0);
-remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
+//http://www.google-adsense-templates.co.uk/removing-wordpress-generator-version-and-other-code-from-the-head.html
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+//http://pixelpunk.co.uk/2010/01/disable-wordpress-built-in-canonical-url/
+remove_action('wp_head', 'rel_canonical');  
+
+// smart jquery inclusion 
+//http://digwp.com/2010/03/wordpress-functions-php-template-custom-functions/ 
+if (!is_admin()) {
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"), false);
+	wp_enqueue_script('jquery');
+}
 
 
 if ( ! function_exists( 'twentyten_posted_on' ) ) :
