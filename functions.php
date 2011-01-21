@@ -1,5 +1,13 @@
 <?php 
 
+
+//http://digwp.com/2010/03/wordpress-functions-php-template-custom-functions/ 
+// add a favicon to your 
+function blog_favicon() {
+	echo '<link rel="Shortcut Icon" type="image/x-icon" href="'.get_bloginfo('wpurl').'/favicon.ico" />';
+}
+add_action('wp_head', 'blog_favicon');
+
 // remove junk from head  
 //http://digwp.com/2010/03/wordpress-functions-php-template-custom-functions/
 remove_action('wp_head', 'rsd_link');
@@ -20,7 +28,17 @@ remove_action('wp_head', 'rel_canonical');
 if (!is_admin()) {
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"), false);
-	wp_enqueue_script('jquery');
+	wp_enqueue_script('jquery'); 
+	if ( !is_admin() ) { // instruction to only load if it is not the admin area
+	   // register your script location, dependencies and version
+	   wp_register_script('dw_slideshow',
+	       get_bloginfo('stylesheet_directory') . '/js/dw_slideshow.js',
+	       array('jquery'),
+	       '1.0' );
+	   // enqueue the script
+	   wp_enqueue_script('dw_slideshow');
+	}
+	
 }
 
 // enable threaded comments
@@ -32,12 +50,12 @@ function enable_threaded_comments(){
 }
 add_action('get_header', 'enable_threaded_comments');
 
-// kill the admin nag
+// kill the admin nag 
+//http://digwp.com/2010/03/wordpress-functions-php-template-custom-functions/ 
 if (!current_user_can('edit_users')) {
 	add_action('init', create_function('$a', "remove_action('init', 'wp_version_check');"), 2);
 	add_filter('pre_option_update_core', create_function('$a', "return null;"));
 }
-
 
 if ( ! function_exists( 'twentyten_posted_on' ) ) :
 /**
