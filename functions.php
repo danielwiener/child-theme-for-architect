@@ -72,14 +72,9 @@ function nerdy_get_images($size = 'thumbnail', $limit = '0', $offset = '0') {
 			
 			//DW trying to get rid of _still in Horizon
 			
-			$pattern = '/_still/';
+		   
 			?>
-			<?php if (!preg_match($pattern, $img_url)): ?>
-				
-		
-
 			<a href="<?php echo $img_url; ?>"><img src="<?php echo $img_preview; ?>" alt='<?php echo $img_title; ?>' title='<?php echo $img_title; ?>' height="40" width="40"></a>
-				<?php endif ?>
 			<?php
 			// End custom image tag. Do not edit below here.
 			///////////////////////////////////////////////////////////
@@ -176,22 +171,22 @@ function numeric_pagination ($pageCount = 5, $query = null) {
 	</div>
 <?php } /* end of pagination */	
 // add google analytics to footer
-function add_google_analytics() {
-echo '<script type="text/javascript">';
-echo "\n";
-echo '  var _gaq = _gaq || [];';
-echo '  _gaq.push(["_setAccount", "UA-4209431-1"]);';
-echo '  _gaq.push(["_trackPageview"]);';
-echo "\n";
-echo '  (function() {';
-echo '    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;';
-echo '    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";';
-echo '    var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);';
-echo '  })();';
-echo "\n";
-echo '</script>';
-}
-add_action('wp_footer', 'add_google_analytics');
+// function add_google_analytics() {
+// echo '<script type="text/javascript">';
+// echo "\n";
+// echo '  var _gaq = _gaq || [];';
+// echo '  _gaq.push(["_setAccount", "UA-4209431-1"]);';
+// echo '  _gaq.push(["_trackPageview"]);';
+// echo "\n";
+// echo '  (function() {';
+// echo '    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;';
+// echo '    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";';
+// echo '    var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);';
+// echo '  })();';
+// echo "\n";
+// echo '</script>';
+// }
+// add_action('wp_footer', 'add_google_analytics');  
 
 function get_archives_link_mod ( $link_html ) {
    preg_match ("/href='(.+?)'/", $link_html, $url);
