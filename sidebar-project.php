@@ -3,8 +3,8 @@
  * The Sidebar containing the primary and secondary for the About Pages.
  *
  * @package WordPress
- * @subpackage Margeaux
- * @since Margeaux 1.0
+ * @subpackage East End Architect
+ * @since East End Architect 1.0
  */
 ?>
 
