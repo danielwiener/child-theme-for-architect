@@ -51,17 +51,6 @@
 ?>
 <script type="text/javascript" src="<?php bloginfo("stylesheet_directory"); ?>/js/yourScript.js"></script>
 
-
-<?php if (is_date()) : ?>
-	<script type="text/javascript">
-jQuery.noConflict();
-// when the DOM is ready
-jQuery(document).ready(function($)  {
-	$('#menu-item-23').addClass('current-menu-item'); //highlights News when a date is clicked
-});
-</script>
-<?php endif; ?>
-
 <script type="text/javascript">
 
 jQuery.noConflict();
