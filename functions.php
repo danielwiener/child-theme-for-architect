@@ -69,38 +69,18 @@ function nerdy_get_images($size = 'thumbnail', $limit = '0', $offset = '0') {
  			///////////////////////////////////////////////////////////
 			// This is where you'd create your custom image/link/whatever tag using the variables above.
 			// This is an example of a basic image tag using this method.
-			
-			//DW trying to get rid of _still in Horizon
-			
 		   
 			?>
 			<a href="<?php echo $img_url; ?>"><img src="<?php echo $img_preview; ?>" alt='<?php echo $img_title; ?>' title='<?php echo $img_title; ?>' height="40" width="40"></a>
 			<?php
 			// End custom image tag. Do not edit below here.
 			///////////////////////////////////////////////////////////
-
 			}
 			$i++;
 		}
 
 	}
 }
-/* Strip Extensions *******************************************
-
-To get the extension of an image. http://www.lost-in-code.com/programming/php-code/php-strip-or-find-a-file-extension/
-*/
-	function stripExtension($filename = ”) {
-	    if (!empty($filename)) {
-	        $filename = strtolower($filename);
-	        $extArray = split("[/\\.]", $filename);
-	        $p = count($extArray) - 1;
-	        $extension = $extArray[$p];
-	        return $extension;
-	    } else {
-	        return false;
-	    }
-	}
-
 /* Numeric Pagination *******************************************
 
 This if from the Gravy template by Darren Hoyt. http://www.darrenhoyt.com 
