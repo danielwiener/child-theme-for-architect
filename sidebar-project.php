@@ -45,7 +45,7 @@
 	   
 		
 		endif; ?>
-	<p><?php echo $this_content; ?></p>
+	<?php echo $this_content; ?>
 	  <ul>
 	<?php
 	if ($post->post_parent == 69): 
