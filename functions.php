@@ -1,5 +1,12 @@
 <?php 
-
+ /**
+ * Set the content width based on the theme's design and stylesheet.
+ *
+ * Used to set the width of images and content. Should be equal to the width the theme
+ * is designed for, generally via the style.css stylesheet.
+ */
+if ( ! isset( $content_width ) )
+	$content_width = 700;
 
 //http://digwp.com/2010/03/wordpress-functions-php-template-custom-functions/ 
 // add a favicon to your 
@@ -180,7 +187,8 @@ endif;
 	set_post_thumbnail_size( 150, 150, true ); // default thumbnail size
 	add_image_size('pinky', 40, 40, true); // for pinky previews
 	add_image_size('tn-200', 200, 200, true); // just in case
-	add_image_size('tn-250', 250, 250, true); // just in case
+	add_image_size('tn-250', 250, 250, true); // just in case   
+   	 add_image_size('tn-300', 300, 300, true); // just in case  
 	
 function remove_dashboard_widgets() {
 	// Globalize the metaboxes array, this holds all the widgets for wp-admin
