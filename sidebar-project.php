@@ -24,6 +24,8 @@
 				$this_id = $post->ID;
 				$parent_title = $post->post_title;
 				$this_content  = $post->post_content;
+				$this_content = wpautop($this_content);
+				$this_content = wptexturize( $this_content);
 				?>
 				<h3 class="widget-title"><?php echo $parent_title; ?></h3> 
 			<?php else:
@@ -32,6 +34,9 @@
 				$child_title = $post->post_title;
 				$parent_post = get_post($this_id);
 				$this_content  = $parent_post->post_content;
+				
+				$this_content = wpautop($this_content);
+				$this_content = wptexturize( $this_content);
 				$parent_url = get_page_uri($this_id);     
  				?>
 	            <h3 class="widget-title"><a href="<?php echo $parent_url; ?>"><?php echo $parent_title; ?></a></h3>
