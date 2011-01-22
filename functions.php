@@ -64,6 +64,20 @@ if (!current_user_can('edit_users')) {
 	add_filter('pre_option_update_core', create_function('$a', "return null;"));
 }
 
+
+//This code will add the same "excerpt" box which you are familiar with on the "Add/Edit Post" admin area and duplicate that functionality on the "Add/Edit Page" section.
+//http://wordpress.stackexchange.com/questions/1567/best-collection-of-code-for-your-functions-php-file
+if ( function_exists('add_post_type_support') ) 
+{
+    add_action('init', 'add_page_excerpts');
+    function add_page_excerpts() 
+    {        
+        add_post_type_support( 'page', 'excerpt' );
+    }
+}
+
+
+
 if ( ! function_exists( 'twentyten_setup' ) ):
 /**
  * Sets up theme defaults and registers support for various WordPress features.
