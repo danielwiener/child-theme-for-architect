@@ -3,9 +3,9 @@
 /*	background:#fff  url(../images/gradient400.png) repeat-x */;
 	/* border:1px solid #ccc;*/ 
 	position:relative;	
-	height:480px;
+	height:500px;
 	
-	width:675px;
+	width:720px;
 	float:left;	
 	margin:0;
 	padding: 0;
@@ -26,7 +26,7 @@
 	left:0;		
 	margin:0px;
 	padding:0px 0px 0px 0px;
-	height:480px;
+	height:500px;
 	/*font-size:12px;*/
 }
 

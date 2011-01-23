@@ -34,8 +34,6 @@ get_header(); ?>
 							if ($attachments) :?> 
 							<?php foreach ($attachments as $attachment) : ?>  
                                 <div>
-						   
-
 						   <a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image($attachment->ID, 'full', false, false); ?></a>                            
 
                              </div> <!-- plain div -->  

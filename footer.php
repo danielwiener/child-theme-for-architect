@@ -29,9 +29,12 @@
 			</div><!-- #site-info -->
                       P.O. Box 540 | Amagansett, NY 11930 | 631.324.4868
 			<div id="site-generator"> 
+				  <?php if (!is_front_page()): ?>
+				  	
 				 
 			   Design by <a href="http://danielwiener.com">DW</a> | 
 				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentyten' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentyten' ); ?>" rel="generator"><?php printf( __( 'Developed on %s.', 'twentyten' ), 'Wordpress' ); ?></a>
+				 <?php endif ?> 
 			</div><!-- #site-generator -->
 
 		</div><!-- #colophon -->
