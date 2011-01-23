@@ -33,7 +33,10 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
 
 	?></title>
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" /> 
+<?php if( is_front_page() ): ?>
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/tabs_slideshow.css" />
+<?php endif; ?>
 <?php
 
 	/* Always have wp_head() just before the closing </head>
@@ -47,6 +50,9 @@
 
 <script type="text/javascript" src="http://use.typekit.com/tps2mqd.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<?php if ( is_front_page() ): ?>
+<script type="text/javascript" src="<?php bloginfo("stylesheet_directory"); ?>/js/jquery.tools.min.js"></script>
+<?php endif; ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -73,4 +79,4 @@
 		</div><!-- #masthead -->
 	</div><!-- #header -->
 
-	<div id="main">
+	<div id="main"> 

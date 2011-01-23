@@ -37,15 +37,15 @@ if (!is_admin()) {
 	wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"), false);
 	wp_enqueue_script('jquery'); 
 	if ( !is_admin() ) { // instruction to only load if it is not the admin area
-	   // register your script location, dependencies and version
+	   // register your script location, dependencies and version  
 	   wp_register_script('dw_slideshow',
 	       get_bloginfo('stylesheet_directory') . '/js/dw_slideshow.js',
 	       array('jquery'),
 	       '1.0' );
 	   // enqueue the script
 	   wp_enqueue_script('dw_slideshow');
-	}
-	
+	} 
+     
 }
 
 // enable threaded comments
