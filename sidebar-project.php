@@ -61,12 +61,25 @@
 			 ?>
 			    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?> >></a></li>
 			 <?php endforeach; ?>
-				</ul>
+				</ul> 
+				<?php
+			      $builder = get_post_meta($this_id, Builder, true); ?>
+					<?php if ($builder): ?>
+						 <p><small><strong>Builder:</strong><br /><?php echo $builder; ?></small></p>
+					<?php endif; ?>
+					<?php 
+					$photographer = get_post_meta($this_id, Photographer, true); ?>
+						<?php if ($photographer): ?>
+							 <p><small><strong>Photographer:</strong><br /><?php echo $photographer; ?></small></p>
+						<?php endif; ?>
 	          <?php else: ?>
 		<p><a href="<?php echo $parent_url; ?>"><< Return to completed project.</a>
 			   <?php endif; ?>
-	   </div><!-- #primary .widget-area -->
+			 
 
+		      
+	   </div><!-- #primary .widget-area -->
+     
 <?php
 	// A second sidebar for widgets, just because.
 	if ( is_active_sidebar( 'secondary-widget-area' ) ) : ?>
