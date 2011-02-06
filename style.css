@@ -130,8 +130,7 @@ textarea,
 }
 h3#comments-title,
 h3#reply-title,
-#access .menu,
-#access div.menu ul,
+.widget-title,
 #cancel-comment-reply-link,
 .form-allowed-tags,
 #site-info,
@@ -144,16 +143,19 @@ h3#reply-title,
 .entry-content tr th,
 .entry-content thead th,
 .entry-meta,
-.entry-title,
 .entry-utility,
 #respond label,
-.navigation,
 .page-title,
 .pingback p,
 .reply,
-.widget-title,
 .wp-caption-text,
 input[type=submit] {
+   font-family: "trajan-pro-1","trajan-pro-2",sans-serif;
+} 
+
+
+
+#access .menu, #access div.menu ul, .entry-title, .navigation  {
 	font-family: "proxima-nova-1","proxima-nova-2","helvetica",sans-serif;
 }
 pre {
@@ -204,7 +206,7 @@ div.menu,
 	float: left;
 	font-size: 14px;
 	font-weight: bold;
-	width: 120px;
+	width: 240px;
 }
 #site-generator {
 	float: right;
@@ -356,13 +358,12 @@ a:hover {
 }
 #site-title {
 	float: left;
-	font-size: 22px; 
+	font-size: 30px; 
 	line-height: 36px;
 /*	height: 72px;*/
 	margin: 0 0 0px 0;
 	width: 700px;
 	color: #000B6C;
-
 }
 #site-title a {
 	color: #000B6C;
@@ -410,10 +411,11 @@ a:hover {
 }
 #access .menu-header,
 div.menu {
-	font-size: 12px;
+	font-size: 14px;
 	/*margin-left: 12px;*/ /*DW*/
 	width: 940px;
-	text-transform: uppercase; /*DW*/
+	text-transform: uppercase; /*DW*/ 
+	font-weight: 300;
 }
 #access .menu-header ul,
 div.menu ul {
@@ -634,7 +636,8 @@ div.menu li {
 .entry-content,
 .entry-summary {
 	clear: both;
-	padding: 12px 0 0 0;
+	padding: 12px 0 0 0; 
+	width: 560px;
 }
 #content .entry-summary p:last-child {
 	margin-bottom: 12px;
@@ -953,14 +956,14 @@ max-width: 375px;
 -------------------------------------------------------------- */
 
 .navigation {
-	color: #888;
+	color: #666;
 	font-size: 12px;
 	line-height: 18px;
 	overflow: hidden;
 }
 .navigation a:link,
 .navigation a:visited {
-	color: #888;
+	color: #666;
 	text-decoration: none;
 }
 .navigation a:active,
@@ -1206,29 +1209,43 @@ h3#reply-title {
 	margin: 0 0 18px 0;
 }
 .widget-title {
-	color: #666;
+   color: #000B6C;
+	font-size: 28px;
+	font-weight: 600;
 }
 
 h3.widget-title {
 	padding: 0px 0px 10px 0px;
-	font-size: 15px;
+	font-size: 18px; /*dw*/
 }
 .widget-area a:link, /*for side menu*/
-.widget-area a:visited {
-	color: #999999;
+.widget-area a:visited{
+	color: #000B6C;
 	text-decoration: none;
 	font-family: Helvetica, Arial, sans-serif;
-	font-size: 13px;
-	line-height: 20px;
+	font-size: 14px;
+	line-height: 20px; 
+	font-weight: bold;
 }
 .widget-area a:active,
 .widget-area a:hover {
-color: #333333;
+color: #999;
 text-decoration: none;	
 }
-.widget-area .entry-meta {
-	font-size: 11px;
-}
+
+h3.widget-title a:link, h3.widget-title a:visited {
+   font-family: "trajan-pro-1","trajan-pro-2",sans-serif;
+	color: #000B6C;
+	font-size: 18px;
+	font-weight: 600; 
+	} 
+#main #primary p  {
+	font-size: 14px;
+	font-family: Helvetica, Arial, sans-serif;
+	letter-spacing: .07em;
+} 
+
+
 #wp_tag_cloud div {
 	line-height: 1.6em;
 }
@@ -1329,9 +1346,6 @@ text-decoration: none;
 	color: #333333;
 }
 
-.contact #primary  {
-	width: 170px;
-}
 
 #secondary {
 }

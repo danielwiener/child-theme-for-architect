@@ -23,7 +23,7 @@ get_header(); ?>
 
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-					<div class="entry-content">
+					
 						<div id="projects">
 						<?php  nerdy_get_images('pinky', '0', '0'); ?>
 						
@@ -50,7 +50,7 @@ get_header(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
 						<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="edit-link">', '</span>' ); ?>
 						</div><!-- #projects -->
-					</div><!-- .entry-content -->
+				   
 				</div><!-- #post-## -->
 
 				<?php // comments_template( '', true ); ?>

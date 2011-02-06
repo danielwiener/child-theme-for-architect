@@ -59,11 +59,11 @@
 			foreach($program_pages as $post) :
 			   setup_postdata($post); 
 			 ?>
-			    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+			    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?> >></a></li>
 			 <?php endforeach; ?>
 				</ul>
 	          <?php else: ?>
-		<p><a href="<?php echo $parent_url; ?>">Return to completed project.</a>
+		<p><a href="<?php echo $parent_url; ?>"><< Return to completed project.</a>
 			   <?php endif; ?>
 	   </div><!-- #primary .widget-area -->
 
