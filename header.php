@@ -55,6 +55,7 @@
 <?php endif; ?> 
 
 <script type="text/javascript">
+// http://web.enavu.com/tutorials/making-image-captions-using-jquery/  
 jQuery(document).ready(function($){
 	//for each description div...
 	$('div.dw_description').each(function(){
