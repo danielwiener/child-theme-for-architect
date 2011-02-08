@@ -117,6 +117,12 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
  .news {
 	/*width: 600px;*/
 	margin: -45px 0 0 120px;
+} 
+
+/*DESCRIPTION: Full width content with no sidebar; used for double image pages and for more*/
+.full_width #content {
+	width: 900px;
+    /*border: 1px solid #999;*/
 }
 
 /* =Fonts
@@ -893,6 +899,32 @@ body.page .edit-link {
 #content .attachment img { /* single attachment images should be centered */
 	display: block;
 	margin: 0 auto;
+}
+
+#content #two_images ul {
+	list-style: none;
+	clear: both;
+}
+
+#content #two_images ul li {
+	float: left;
+	padding: 0;
+	text-align: left;
+	display: block;
+	width: 380px;
+	/*border: 1px solid #999;*/ 
+	padding-bottom: 20px;
+}
+
+
+#content #two_images ul li img {
+width: 300px;
+padding: 0;
+margin: 0;
+}
+
+#content #two_images div.image_title {
+color: #000;
 }
 
 /* =Image Grid DW

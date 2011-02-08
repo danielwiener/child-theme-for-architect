@@ -52,7 +52,65 @@
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 <?php if ( is_front_page() ): ?>
 <script type="text/javascript" src="<?php bloginfo("stylesheet_directory"); ?>/js/jquery.tools.min.js"></script>
-<?php endif; ?>
+<?php endif; ?> 
+
+<script type="text/javascript">
+jQuery(document).ready(function($){
+	//for each description div...
+	$('div.dw_description').each(function(){
+		//...set the opacity to 0...
+		$(this).css('opacity', 0);
+		//..set width same as the image...
+		$(this).css('width', $(this).siblings('img').width());
+		//...get the parent (the wrapper) and set it's width same as the image width... '
+		$(this).parent().css('width', $(this).siblings('img').width());
+		//...set the display to block
+		$(this).css('display', 'block');
+	});
+	
+	$('div.dw_wrapper').hover(function(){
+		//when mouse hover over the wrapper div
+		//get it's children elements with class descriptio
+		//and show it using fadeTo
+		$(this).children('.dw_description').stop().fadeTo(500, 0.7);
+	},function(){
+		//when mouse out of the wrapper div
+		//use fadeTo to hide the div
+		$(this).children('.dw_description').stop().fadeTo(500, 0);
+	});
+	
+});
+  
+</script>
+<style>
+div.dw_wrapper{
+	position:relative; /* important(so we can absolutely position the description div */ 
+}
+div.dw_description{
+	position:absolute; /* absolute position (so we can position it where we want)*/
+	bottom:6px; /* position will be on bottom */
+	left:0px;
+	display:none; /* hide it */
+	/* styling bellow */
+	background-color:black;
+	font-family: 'tahoma';
+	font-size:15px;
+	color:white;
+	width: 300px;
+} 
+div.dw_description a:link, div.dw_description a:visited{
+	 color: #99CCFF; 
+	} 
+	
+div.dw_description a:hover, div.dw_description a:active{
+		 color: #aaa; 
+		}
+
+div.dw_description_content{
+	padding:10px;
+}
+
+</style>
 </head>
 
 <body <?php body_class(); ?>>
