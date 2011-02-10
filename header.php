@@ -83,35 +83,7 @@ jQuery(document).ready(function($){
 });
   
 </script>
-<style>
-div.dw_wrapper{
-	position:relative; /* important(so we can absolutely position the description div */ 
-}
-div.dw_description{
-	position:absolute; /* absolute position (so we can position it where we want)*/
-	bottom:6px; /* position will be on bottom */
-	left:0px;
-	display:none; /* hide it */
-	/* styling bellow */
-	background-color:black;
-	font-family: 'tahoma';
-	font-size:15px;
-	color:white;
-	width: 300px;
-} 
-div.dw_description a:link, div.dw_description a:visited{
-	 color: #99CCFF; 
-	} 
-	
-div.dw_description a:hover, div.dw_description a:active{
-		 color: #aaa; 
-		}
 
-div.dw_description_content{
-	padding:10px;
-}
-
-</style>
 </head>
 
 <body <?php body_class(); ?>>
