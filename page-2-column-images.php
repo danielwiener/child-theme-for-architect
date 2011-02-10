@@ -39,12 +39,13 @@ get_header(); ?>
 							$count = 0;
 							foreach ($images as $image) :
 							$img_title = $image->post_title;   // title.
-							$img_description = $image->post_content; // description. this is a workaround. using description for a url to "project"
+							$img_description = $image->post_content; // description. this is a workaround. using description for text description to "project"
+							$img_caption = $image->post_excerpt; // caption. this is a workaround. using caption for a url to "project"
 							$img_url = wp_get_attachment_url($image->ID); // url of the full size image.
 							$full_array = image_downsize( $image->ID, 'full');
 							$full = $full_array[0]; // medium-380 image to use for preview
 							?>
-<li><div class="dw_wrapper"><a href="<?php echo $img_description; ?>"><img src="<?php echo $full; ?>" alt='<?php echo $img_title; ?>' title='<?php echo $img_title; ?>' width="400" height="300"></a><div class="dw_description"><div class="dw_description_content"><strong><?php echo $img_title; ?></strong><br />Author, short summary of article, <a href="#">link to project</a>, <a href="#">link to article</a>, and more. 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div></div></div></li>
+<li><div class="dw_wrapper"><a href="<?php echo $img_caption; ?>"><img src="<?php echo $full; ?>" alt='<?php echo $img_title; ?>' title='<?php echo $img_title; ?>' width="400" height="300"></a><div class="dw_description"><div class="dw_description_content"><strong><?php echo $img_title; ?></strong><br /><?php echo $img_description; ?></div></div></div></li>
 										<?php if ($count % 2): ?>
 											</ul><ul>
 										<?php endif ?>
