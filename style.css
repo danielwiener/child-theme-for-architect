@@ -364,8 +364,8 @@ a:hover {
 }
 #site-title {
 	float: left;
-	font-size: 30px; 
-	line-height: 36px;
+	font-size: 24px; 
+	line-height: 30px;
 /*	height: 72px;*/
 	margin: 0 0 0px 0;
 	width: 700px;
@@ -1266,7 +1266,7 @@ text-decoration: none;
 }
 
 h3.widget-title a:link, h3.widget-title a:visited {
-   font-family: "trajan-pro-1","trajan-pro-2",sans-serif;
+   font-family: "trajan-pro-1","trajan-pro-2", sans-serif;
 	color: #000B6C;
 	font-size: 18px;
 	font-weight: 600; 
