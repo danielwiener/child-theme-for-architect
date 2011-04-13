@@ -21,7 +21,7 @@ get_header(); ?>
 			<ul>		
 <?php 
 	$recent_args = array(
-		'posts_per_page' => 10,
+		'posts_per_page' => 15,
 		'post_type' => 'page',
 		'post_status' => 'publish',
 		'caller_get_posts' => 1,
