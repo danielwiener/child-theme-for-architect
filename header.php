@@ -12,6 +12,16 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
+		<?php if ( is_home() || is_front_page() || is_page('projects')  ): ?>
+			<meta name="description" content="Darren J. Helgesen offers architectural, interior, and landscape design, including site analysis, preliminary design, working drawings, and construction follow up.">
+	 	<?php else: ?> 
+		<?php $post = get_post( $postID );
+		    $dw_dh_excerpt = strip_tags($post->post_content);
+			$dw_dh_excerpt = str_replace( array( "\r\n", "\n\n"),' ',$dw_dh_excerpt); 
+			$dw_dh_excerpt = preg_replace('/\s+?(\S+)?$/', '', substr($dw_dh_excerpt, 0, 155));
+			?>
+			 <meta name="description" content="<?php echo $dw_dh_excerpt; ?>">
+		<?php endif; ?> 
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
@@ -94,10 +104,7 @@ jQuery(document).ready(function($){
 				<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
 				<<?php echo $heading_tag; ?> id="site-title">
 					
-						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><span><?php bloginfo( 'name' ); ?></span></a>
-				
-				</<?php echo $heading_tag; ?>>
-				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><span><?php bloginfo( 'name' ); ?></span></a></<?php echo $heading_tag; ?>>
 
 			</div><!-- #branding -->
 
