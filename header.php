@@ -12,8 +12,10 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-		<?php if ( is_home() || is_front_page() || is_page('projects')  ): ?>
+		<?php if ( is_home() || is_front_page() || is_page('projects') || is_page('contact') ): ?>
 			<meta name="description" content="Darren J. Helgesen offers architectural, interior, and landscape design, including site analysis, preliminary design, working drawings, and construction follow up.">
+		<?php elseif( is_page('press') ): ?>
+			      <meta name="description" content="Darren Helgesen is included in numerous publications, including Architectural Digest, House Beautiful, Country Living, This Old House, W, Elle, Hampton Style.">	
 	 	<?php else: ?> 
 		<?php $post = get_post( $postID );
 		    $dw_dh_excerpt = strip_tags($post->post_content);
