@@ -77,6 +77,8 @@ if (!current_user_can('edit_users')) {
 	
 add_action('admin_menu', 'add_custom_tags_box');  
 
+/** Tell WordPress to run twentyten_setup() when the 'after_setup_theme' hook is run. */
+add_action( 'after_setup_theme', 'twentyten_setup' );
 
 if ( ! function_exists( 'twentyten_setup' ) ):
 /**
@@ -98,7 +100,7 @@ if ( ! function_exists( 'twentyten_setup' ) ):
  * @uses register_default_headers() To register the default custom header images provided with the theme.
  * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
  *
- * @since Twenty Ten 1.0
+ * @since East End Architect 0.5
  */
 function twentyten_setup() {
 
@@ -110,6 +112,11 @@ function twentyten_setup() {
 
 	// This theme uses post thumbnails
 	add_theme_support( 'post-thumbnails' );
+	set_post_thumbnail_size( 150, 150, true ); // default thumbnail size
+	add_image_size('pinky', 40, 40, true); // for pinky previews
+	add_image_size('tn-200', 200, 200, true); // just in case
+	add_image_size('tn-250', 250, 250, true); // just in case   
+   	add_image_size('tn-300', 300, 300, true); // just in case
 
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
@@ -126,83 +133,37 @@ function twentyten_setup() {
 	) );
 
 	// This theme allows users to set a custom background
-	add_custom_background();
-
-	// Your changeable header business starts here
-	if ( ! defined( 'HEADER_TEXTCOLOR' ) )
-		define( 'HEADER_TEXTCOLOR', '' );
-
-	// No CSS, just IMG call. The %s is a placeholder for the theme template directory URI.
-	if ( ! defined( 'HEADER_IMAGE' ) )
-		define( 'HEADER_IMAGE', '%s/images/headers/path.jpg' );
-
-	// Don't support text inside the header image.
-	if ( ! defined( 'NO_HEADER_TEXT' ) )
-		define( 'NO_HEADER_TEXT', true );
-
-	// Add a way for the custom header to be styled in the admin panel that controls
-	// custom headers. See twentyten_admin_header_style(), below.
-	add_custom_image_header( '', 'twentyten_admin_header_style' );
-
+	add_custom_background();   
 	
+   
+
+	// Deleted changeable header stuff   
 }
 endif;
 
 if ( ! function_exists( 'twentyten_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
- *
+ *  not using this, so empty, so parent theme does not call it.
  * Referenced via add_custom_image_header() in twentyten_setup().
  *
- * @since Twenty Ten 1.0
+ * @since East End Architect 0.5
  */
-function twentyten_admin_header_style() {
-?>
-<style type="text/css">
-/* Shows the same border as on front end */
-#headimg {
-	border-bottom: 1px solid #000;
-	border-top: 4px solid #000;
-}
-/* If NO_HEADER_TEXT is false, you would style the text with these selectors:
-	#headimg #name { }
-	#headimg #desc { }
-*/
-</style>
-<?php
-}
+	function twentyten_admin_header_style() {
+	}
 endif;
-
-
 
 if ( ! function_exists( 'twentyten_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post—date/time and author.
- *
- * @since Twenty Ten 1.0
+ *  not using this, so empty, so parent theme does not call it.
+ * @since East End Architect 0.5
  */
-function twentyten_posted_on() {
-	printf( __( '%2$s <span class="meta-sep">by</span> %3$s', 'twentyten' ),
-		'meta-prep meta-prep-author',
-		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
-			get_permalink(),
-			esc_attr( get_the_time() ),
-			get_the_date()
-		),
-		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
-			get_author_posts_url( get_the_author_meta( 'ID' ) ),
-			sprintf( esc_attr__( 'View all posts by %s', 'twentyten' ), get_the_author() ),
-			get_the_author()
-		)
-	);
-}
+	function twentyten_posted_on() {
+	}
 endif;
 
-	set_post_thumbnail_size( 150, 150, true ); // default thumbnail size
-	add_image_size('pinky', 40, 40, true); // for pinky previews
-	add_image_size('tn-200', 200, 200, true); // just in case
-	add_image_size('tn-250', 250, 250, true); // just in case   
-   	 add_image_size('tn-300', 300, 300, true); // just in case  
+	  
 	
 function remove_dashboard_widgets() {
 	// Globalize the metaboxes array, this holds all the widgets for wp-admin
