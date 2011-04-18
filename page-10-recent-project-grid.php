@@ -15,12 +15,10 @@ get_header(); ?>
 
 		<div id="container" class="single-attachment">
 			<div id="content" role="main">
-				
-	
-		<div id="image_grid">
-			<ul>		
+				<div id="image_grid">
+					<ul>		
 <?php  
-$pageslug = $post->post_name;
+	$pageslug = $post->post_name;
 	$recent_args = array(
 		'posts_per_page' => 15,
 		'post_type' => 'page',
@@ -30,14 +28,14 @@ $pageslug = $post->post_name;
 		'category_name' => $pageslug
 		);
 	query_posts($recent_args);
-	if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+			if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 			
 				<li><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?><br />
 				<?php the_title(); ?></a></li>
 			
-<?php endwhile; ?>
-</ul>
-</div> <!-- #image_grid -->
+			<?php endwhile; ?>
+					</ul>
+				</div> <!-- #image_grid -->
 			</div><!-- #content -->
 		</div><!-- #container -->
 
