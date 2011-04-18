@@ -23,7 +23,7 @@ get_header(); ?>
 		'posts_per_page' => 15,
 		'post_type' => 'page',
 		'post_status' => 'publish',
-		'caller_get_posts' => 1,
+		'ignore_sticky_posts' => 1,
 		'post_parent' => 69,
 		'category_name' => $pageslug
 		);
