@@ -212,7 +212,7 @@ div.menu,
 	float: left;
 	font-size: 14px;
 	font-weight: bold;
-	width: 240px;
+	width: 250px;
 }
 #site-generator {
 	float: right;
@@ -366,21 +366,17 @@ a:hover {
 	float: left;
 	font-size: 24px; 
 	line-height: 30px;
-/*	height: 72px;*/
+	height: 33px; 
 	margin: 0 0 0px 0;
 	width: 900px;
 	color: #000B6C; 
-	border: 1px solid #999;
 }
 #site-title a {
 	color: #000B6C;
-	/*font-weight: bold;*/
 	text-decoration: none;
 	background: #FFFFFF;
 	display: block;
-	/*height: 70px; */
 	width: 900px; 
-	/*border: 1px solid #999;*/
 }
 
 
@@ -931,7 +927,6 @@ list-style: none;
 		padding: 0;
 		margin: 0 0 -7px 0; /*this moves the text up.*/ 
 		}
-
 
 /* =Navigation
 -------------------------------------------------------------- */
