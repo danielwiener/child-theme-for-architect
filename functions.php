@@ -62,6 +62,17 @@ add_action('get_header', 'enable_threaded_comments');
 if (!current_user_can('edit_users')) {
 	add_action('init', create_function('$a', "remove_action('init', 'wp_version_check');"), 2);
 	add_filter('pre_option_update_core', create_function('$a', "return null;"));
+} 
+
+//This code will add the same "excerpt" box which you are familiar with on the "Add/Edit Post" admin area and duplicate that functionality on the "Add/Edit Page" section.
+//http://wordpress.stackexchange.com/questions/1567/best-collection-of-code-for-your-functions-php-file 
+// This is added to use excerpts for meta-tags
+if ( function_exists('add_post_type_support') ) {
+    add_action('init', 'add_page_excerpts');
+    function add_page_excerpts()
+    {
+        add_post_type_support( 'page', 'excerpt' );
+    }
 }
 
 /**
@@ -91,13 +102,11 @@ if ( ! function_exists( 'twentyten_setup' ) ):
  * To override twentyten_setup() in a child theme, add your own twentyten_setup to your child theme's
  * functions.php file.
  *
- * @uses add_theme_support() To add support for post thumbnails and automatic feed links.
+ * @uses add_theme_support() To add support for post thumbnails and post formats.
  * @uses register_nav_menus() To add support for navigation menus.
  * @uses add_custom_background() To add support for a custom background.
  * @uses add_editor_style() To style the visual editor.
  * @uses load_theme_textdomain() For translation/localization support.
- * @uses add_custom_image_header() To add support for a custom header.
- * @uses register_default_headers() To register the default custom header images provided with the theme.
  * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
  *
  * @since East End Architect 0.5
@@ -134,8 +143,6 @@ function twentyten_setup() {
 
 	// This theme allows users to set a custom background
 	add_custom_background();   
-	
-   
 
 	// Deleted changeable header stuff   
 }
