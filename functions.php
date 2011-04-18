@@ -57,16 +57,21 @@ function enable_threaded_comments(){
 }
 add_action('get_header', 'enable_threaded_comments');
 
-// kill the admin nag 
-//http://digwp.com/2010/03/wordpress-functions-php-template-custom-functions/ 
+/**
+* kill the admin nag 
+* http://digwp.com/2010/03/wordpress-functions-php-template-custom-functions/ 
+*/
 if (!current_user_can('edit_users')) {
 	add_action('init', create_function('$a', "remove_action('init', 'wp_version_check');"), 2);
 	add_filter('pre_option_update_core', create_function('$a', "return null;"));
 } 
 
-//This code will add the same "excerpt" box which you are familiar with on the "Add/Edit Post" admin area and duplicate that functionality on the "Add/Edit Page" section.
-//http://wordpress.stackexchange.com/questions/1567/best-collection-of-code-for-your-functions-php-file 
-// This is added to use excerpts for meta-tags
+/**
+* This code will add the same "excerpt" box which you are familiar with on the "Add/Edit Post" admin area
+* duplicate that functionality on the "Add/Edit Page" section.
+* http://wordpress.stackexchange.com/questions/1567/best-collection-of-code-for-your-functions-php-file 
+* This is added to use excerpts for meta-tags
+*/
 if ( function_exists('add_post_type_support') ) {
     add_action('init', 'add_page_excerpts');
     function add_page_excerpts()
@@ -76,7 +81,7 @@ if ( function_exists('add_post_type_support') ) {
 }
 
 /**
-* Add categories to Pages. An easy way to have 2 table of content pages for Projects, without having to change project code
+* 	Add categories to Pages. An easy way to have 2 table of content pages for Projects, without having to change project code
 *   http://shibashake.com/wordpress-theme/add-tags-and-categories-to-your-wordpress-page
 */ 
 
