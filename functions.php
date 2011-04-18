@@ -64,14 +64,17 @@ if (!current_user_can('edit_users')) {
 	add_filter('pre_option_update_core', create_function('$a', "return null;"));
 }
 
-
-  
+/**
+* Add categories to Pages. An easy way to have 2 table of content pages for Projects, without having to change project code
+*   http://shibashake.com/wordpress-theme/add-tags-and-categories-to-your-wordpress-page
+*/ 
 
 	function add_custom_tags_box() {
 		add_meta_box(	'categorydiv', __('Categories'), 'post_categories_meta_box', 
 				'page', 'side', 'low'); 
 	   register_taxonomy_for_object_type('category', 'page');
-	}
+	} 
+	
 add_action('admin_menu', 'add_custom_tags_box');  
 
 
@@ -342,16 +345,4 @@ echo "\n";
 echo '</script>';
 }
 add_action('wp_footer', 'add_google_analytics');  
-
-function get_archives_link_mod ( $link_html ) {
-   preg_match ("/href='(.+?)'/", $link_html, $url);
-   $requested = "http://{$_SERVER['SERVER_NAME']}{$_SERVER['REQUEST_URI']}";
-      if ($requested == $url[1]) {
-         $link_html = str_replace("<li>", "<li class='current-menu-item'>", $link_html);
-      }
-      return $link_html;
-   }
-add_filter("get_archives_link", "get_archives_link_mod");
-
-
 ?>
