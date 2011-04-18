@@ -65,17 +65,14 @@ if (!current_user_can('edit_users')) {
 }
 
 
-//This code will add the same "excerpt" box which you are familiar with on the "Add/Edit Post" admin area and duplicate that functionality on the "Add/Edit Page" section.
-//http://wordpress.stackexchange.com/questions/1567/best-collection-of-code-for-your-functions-php-file
-if ( function_exists('add_post_type_support') ) 
-{
-    add_action('init', 'add_page_excerpts');
-    function add_page_excerpts() 
-    {        
-        add_post_type_support( 'page', 'excerpt' );
-    }
-}
+  
 
+	function add_custom_tags_box() {
+		add_meta_box(	'categorydiv', __('Categories'), 'post_categories_meta_box', 
+				'page', 'side', 'low'); 
+	   register_taxonomy_for_object_type('category', 'page');
+	}
+add_action('admin_menu', 'add_custom_tags_box');  
 
 
 if ( ! function_exists( 'twentyten_setup' ) ):

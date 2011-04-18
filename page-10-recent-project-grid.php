@@ -19,13 +19,15 @@ get_header(); ?>
 	
 		<div id="image_grid">
 			<ul>		
-<?php 
+<?php  
+$pageslug = $post->post_name;
 	$recent_args = array(
 		'posts_per_page' => 15,
 		'post_type' => 'page',
 		'post_status' => 'publish',
 		'caller_get_posts' => 1,
-		'post_parent' => 69
+		'post_parent' => 69,
+		'category_name' => $pageslug
 		);
 	query_posts($recent_args);
 	if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
