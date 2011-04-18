@@ -244,9 +244,7 @@ function nerdy_get_images($size = 'thumbnail', $limit = '0', $offset = '0') {
  			$img_preview = $preview_array[0]; // thumbnail or medium image to use for preview.
 
  			///////////////////////////////////////////////////////////
-			// This is where you'd create your custom image/link/whatever tag using the variables above.
-			// This is an example of a basic image tag using this method.
-		   
+			// This is where you'd create your custom image/link/whatever tag using the variables above		   
 			?>
 			<a href="<?php echo $img_url; ?>"><img src="<?php echo $img_preview; ?>" alt='<?php echo $img_title; ?>' title='<?php echo $img_title; ?>' height="40" width="40"></a>
 			<?php
@@ -255,78 +253,12 @@ function nerdy_get_images($size = 'thumbnail', $limit = '0', $offset = '0') {
 			}
 			$i++;
 		}
-
 	}
 }
 /* Numeric Pagination *******************************************
-
+April 18, 2011 deleted this, because I was not using it. Find it in many of my function files, if needed
 This if from the Gravy template by Darren Hoyt. http://www.darrenhoyt.com 
 */
-
-function numeric_pagination ($pageCount = 5, $query = null) {
-
-	if ($query == null) {
-		global $wp_query;
-		$query = $wp_query;
-	}
-	
-	if ($query->max_num_pages <= 1) {
-		return;
-	}
-
-	$pageStart = 1;
-	$paged = $query->query_vars['paged'];
-	
-	// set current page if on the first page
-	if ($paged == null) {
-		$paged = 1;
-	}
-	
-	// work out if page start is halfway through the current visible pages and if so move it accordingly
-	if ($paged > floor($pageCount / 2)) {
-		$pageStart = $paged	- floor($pageCount / 2);
-	}
-
-	if ($pageStart < 1) {
-		$pageStart = 1;
-	}
-
-	// make sure page start is 
-	if ($pageStart + $pageCount > $query->max_num_pages) {
-		$pageCount = $query->max_num_pages - $pageStart;
-	}
-	
-?>
-	<div id="archive_pagination">
-<?php
-	if ($paged != 1) {
-?>
-	<a href="<?php echo get_pagenum_link(1); ?>" class="numbered page-number-first"><span>&lsaquo; <?php _e('Newest', 'twentyten'); ?></span></a>
-<?php
-	}
-	// first page is not visible...
-	if ($pageStart > 1) {
-		//echo 'previous';
-	}
-	for ($p = $pageStart; $p <= $pageStart + $pageCount; $p ++) {
-		if ($p == $paged) {
-?>
-		<span class="numbered page-number-<?php echo $p; ?> current-numeric-page"><?php echo $p; ?></span>
-<?php } else { ?>
-		<a href="<?php echo get_pagenum_link($p); ?>" class="numbered page-number-<?php echo $p; ?>"><span><?php echo $p; ?></span></a>
-<?php
-		}
-	}
-	// last page is not visible
-	if ($pageStart + $pageCount < $query->max_num_pages) {
-		//echo "last";
-	}
-	if ($paged != $query->max_num_pages) {
-?>
-		<a href="<?php echo get_pagenum_link($query->max_num_pages); ?>" class="numbered page-number-last"><span><?php _e('Oldest', 'gravy'); ?> &rsaquo;</span></a>
-<?php } ?>
-	</div>
-<?php } /* end of pagination */	
 
 //add google analytics to footer
 function add_google_analytics() {
