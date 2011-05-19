@@ -24,7 +24,7 @@
 			?>
 			 <meta name="description" content="<?php echo $dw_dh_excerpt; ?>">
 		<?php endif; ?>
-		<meta name="keywords" content="Amagansett Architects, East Hampton Architects, Montauk Architects, Hamptons Architects, interior design, landscape design, East End, "> 
+		<meta name="keywords" content="Amagansett Architects, East Hampton Architects, Montauk Architects, Hamptons Architects, interior design, landscape design, East End, New Construction, Renovation, Architectural Additions"> 
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
