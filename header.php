@@ -23,7 +23,8 @@
 			$dw_dh_excerpt = preg_replace('/\s+?(\S+)?$/', '', substr($dw_dh_excerpt, 0, 155));
 			?>
 			 <meta name="description" content="<?php echo $dw_dh_excerpt; ?>">
-		<?php endif; ?> 
+		<?php endif; ?>
+		<meta name="keywords" content="Amagansett Architects, East Hampton Architects, Montauk Architects, Hamptons Architects, interior design, landscape design, East End, "> 
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
