@@ -258,5 +258,11 @@ echo '  })();';
 echo "\n";
 echo '</script>';
 }
-add_action('wp_footer', 'add_google_analytics');  
-?>
+add_action('wp_footer', 'add_google_analytics');
+
+add_role('guest', 'Guest', array(
+    'read' => true, // True allows that capability
+    'read_private_posts' => true,
+	'read_private_pages' => true, 
+    'delete_posts' => false, // Use false to explicitly deny
+));
