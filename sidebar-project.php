@@ -67,6 +67,11 @@
 					<?php if ($builder): ?>
 						 <p><small><strong>Builder:</strong><br /><?php echo $builder; ?></small></p>
 					<?php endif; ?>
+					<?php
+				  $decorating = get_post_meta($this_id, Decorating, true); ?>
+					<?php if ($builder): ?>
+						 <p><small><strong>Decorating:</strong><br /><?php echo $decorating; ?></small></p>
+					<?php endif; ?>
 					<?php 
 					$photographer = get_post_meta($this_id, Photographer, true); ?>
 						<?php if ($photographer): ?>
