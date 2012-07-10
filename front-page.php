@@ -53,10 +53,10 @@ get_header(); ?>
 
 					<script language="JavaScript">
 					// What is $(document).ready ? See: http://flowplayer.org/tools/documentation/basics.html#document_ready
-					jQuery.noConflict();
-					jQuery(function()  {
+					jQuery(document).ready(function($){ 
+					$(function()  {
 
-					jQuery(".slidetabs").tabs(".images > div", {
+					$(".slidetabs").tabs(".images > div", {
 
 						// enable "cross-fading" effect
 						effect: 'fade',
@@ -66,7 +66,11 @@ get_header(); ?>
 						rotate: true
 
 					// use the slideshow plugin. It accepts its own configuration
-					}).slideshow({autoplay:true});
+					
+
+					//http://jquerytools.org/forum/tools/25/80221 fix for skipping slide show - no autoplay
+					}).slideshow({autoplay: true} );
+				});
 					});
 					</script>
 

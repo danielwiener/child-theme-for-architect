@@ -64,7 +64,7 @@
 <script type="text/javascript" src="http://use.typekit.com/tps2mqd.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 <?php if ( is_front_page() ): ?>
-<script type="text/javascript" src="<?php bloginfo("stylesheet_directory"); ?>/js/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
 <?php endif; ?> 
 </head>
 
