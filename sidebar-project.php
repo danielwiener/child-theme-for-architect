@@ -69,7 +69,7 @@
 					<?php endif; ?>
 					<?php
 				  $decorating = get_post_meta($this_id, Decorating, true); ?>
-					<?php if ($builder): ?>
+					<?php if ($decorating): ?>
 						 <p><small><strong>Decorating:</strong><br /><?php echo $decorating; ?></small></p>
 					<?php endif; ?>
 					<?php 
